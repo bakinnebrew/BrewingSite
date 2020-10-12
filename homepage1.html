@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>
+            My Mini-Brewery
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <style>
+            .welcome
+                {
+                    text-align: center;
+                    color: #193E18;
+                }
+
+            #bannerimage {
+              width: 100%;
+              background-image: url(http://s30.postimg.org/x0ne0p5wx/bootsrap.png);
+              height: 60px;
+              background-color: rgb(47, 79, 79);
+              background-position: center;
+                    }
+            #Nav a{
+                color: #FAEBD7;
+                text-decoration:none;
+                font-size: 150%
+            }
+            .img{
+                 height:100px;
+                 width:200px;
+                 display:inline-block;
+                 margin-left:0px;
+                }
+            .div1{
+              width: auto;
+              height: 750px;
+              background-color: white;
+              margin-left: 50px;
+              margin-right: 50px;
+                }
+
+            .dropdownVessel {
+              width: auto;
+              margin: 0 auto;
+              padding: 10px;
+                    }
+
+            .dropdown-menu{
+              width: 40px;
+              margin: 10
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+         <style>
+          body{
+                background-color: #D5E2D4;
+          }
+          </style>
+          <script>
+            fermenter_counter = 0;
+            function addFermenter(){
+            if (fermenter_counter < 4)
+            {
+            var img = document.createElement('img')
+            img.src="HomepageFiles/fermenter.png";
+            img.height = 225;
+            img.width = 225;
+            img.margin = 0;
+            var src = document.getElementById("fermenter");
+             src.appendChild(img);
+             fermenter_counter++;
+
+
+            }
+            else
+                 {
+                alert("You have hit your max limit for fermenters!");
+                 }
+            }
+            function removeFermenter(img){
+                var img = document.getElementById("fermenter");
+                 img.remove();
+                fermenter_counter = fermenter_counter - 1;
+            }
+
+            briteTank_counter = 0;
+            function addBritetank(){
+            if (briteTank_counter < 4)
+            {
+            var img = document.createElement('img')
+            img.src="HomepageFiles/Britetank.jpg";
+            img.height = 225;
+            img.width = 175;
+            img.margin = 0;
+            var src = document.getElementById("britetank");
+             src.appendChild(img);
+             briteTank_counter++;
+            }
+            else
+                 {
+                alert("You have hit your max limit for brite tanks!");
+                 }
+            }
+            function removeBritetank(img){
+                var img = document.getElementById("britetank");
+                img.remove();
+                briteTank_counter = briteTank_counter - 1;
+            }
+
+            function select_fermenter(){
+                alert("you have selected a fermenter!");
+            }
+
+            function alert(){
+                alert("You just clicked this pic mang!");
+            }
+          </script>
+
+    </head>
+    <body>
+        <div class = "welcome">
+            <h1 class = "welcome">Welcome to the Mini-Brewery!</h1>
+        </div>
+        <div id="bannerimage">
+            <nav id = "Nav">
+              <a href="https://364029dc-d500-4147-888b-6317b6461df4-ide.cs50.xyz:8080/html/Homepage/calculations.html">Calculations</a> |
+              <a href="https://364029dc-d500-4147-888b-6317b6461df4-ide.cs50.xyz:8080/html/Homepage/Resources.html">Resources</a> |
+              <a href="">Contact</a>
+              </nav>
+        </div>
+        <h1 style ="color:#193E18;font-size: 200%; text-align: center">Keep track of your fermenting treats!</h1>
+                <p style ="color:#193E18; font-size: 130%; text-align: center">
+                    Use the tools below to customize your brewing space.
+                </p>
+
+        <div class="div1">
+               <div class="dropdownVessel">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Add Vessel
+                  </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" onclick="addFermenter()">Fermenter</a>
+                        <a class="dropdown-item" onclick="addBritetank()">Brite Tank</a>
+                      </div>
+                </div>
+                <div class = "dropdownVessel">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Remove Vessel
+                  </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" onclick="removeFermenter()">Fermenter</a>
+                        <a class="dropdown-item" onclick="removeBritetank()">Brite Tank</a>
+                      </div>
+                </div>
+
+                <div id="fermenter"></div>
+                <div id="britetank"></div>
+        </div>
+    </body>
+</html>
+
+

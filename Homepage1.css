@@ -1,0 +1,29 @@
+            .welcome
+                {
+                    text-align: center;
+                    color: #193E18;
+                }
+            .dropdown{
+                padding: 20px;
+            }
+            #bannerimage {
+              width: 100%;
+              background-image: url(http://s30.postimg.org/x0ne0p5wx/bootsrap.png);
+              height: 60px;
+              background-color: rgb(47, 79, 79);
+              background-position: center;
+                    }
+            #Nav a{
+                color: #FAEBD7;
+                text-decoration:none;
+                font-size: 150%
+            }
+            #Nav hover{
+                background-color: #5F8D5E
+            }
+            .div1{
+              width: 1000px;
+              height: 750px;
+              background-color: white;
+              margin-left: 50px;
+                }

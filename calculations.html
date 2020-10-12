@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Mini-Brewery - Calculations
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <style>
+            body{
+                background-color: #D5E2D4;
+              }
+             #bannerimage {
+              width: 100%;
+              background-image: url(http://s30.postimg.org/x0ne0p5wx/bootsrap.png);
+              height: 60px;
+              background-color: rgb(47, 79, 79);
+              background-position: center
+              }
+
+               #Nav a{
+                color: #FAEBD7;
+                text-decoration:none;
+                font-size: 150%
+                       }
+            h1{
+                text-decoration: underline;
+            }
+        </style>
+        <script>
+            function dillution_liquid(){
+                let term = document.querySelector("#term").value;
+                if (term === "")
+                    {
+                        term = "undefined";
+                    }
+                document.querySelector("#result").innerHTML = "Dillution Liquid: " + term;
+            }
+            function CVCV_formula(){
+                var concentration = Number(prompt("Please enter your current concentration using integers", "10"));
+                var volume_one = Number(prompt("Please enter your current volume using integers", "5"));
+                var concentration_two = Number(prompt("What is your desired concentration?", "8"));
+                alert(volume_one - ((concentration_two * volume_one)/concentration));
+            }
+        </script>
+    </head>
+        <body>
+            <h1 style="color:#193E18;font-size: 250%; text-align: center">
+                Calculations
+            </h1>
+            <div id="bannerimage">
+                    <nav id = "Nav">
+                    <a href="https://364029dc-d500-4147-888b-6317b6461df4-ide.cs50.xyz:8080/html/Homepage/homepage1.html">Home</a> |
+                    <a href="https://364029dc-d500-4147-888b-6317b6461df4-ide.cs50.xyz:8080/html/Homepage/Resources.html">Resources</a> |
+                    <a href="">Contact</a>
+                    </nav>
+            </div>
+            <h1 style = "color:#193E18; font-size: 200%; text-align: center;">
+                Dillution Formula
+            </h1>
+            <p style = "color:#193E18; font-size: 100%; text-align: center;">
+                Use the below formula to figure out how much you need to dillute your desired liquid with water.
+            </p>
+            <div style ="color:#193E18; font-size: 200%;" id = "result">
+                        Dillution Liquid:
+             </div>
+             <form onsubmit= "dillution_liquid(); return false;">
+                    <input type = "text" id = "term">
+                    <input type = "submit">
+            </form>
+            <div>
+                <p style = "color:#193E18; font-size: 100%;">
+                    Enter current concentration using only integers.
+                    Click below when ready.
+                </p>
+                <button onclick="CVCV_formula()">Begin Calculation</button>
+                <div id="end">
+                </div>
+            </div>
+        </body>
+</html>
